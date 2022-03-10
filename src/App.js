@@ -17,6 +17,7 @@ import orange from "@material-ui/core/colors/orange";
 import green from "@material-ui/core/colors/green";
 import "fontsource-roboto";
 import Typography from "@material-ui/core/Typography";
+import Container from "@material-ui/core/Container";
 
 const useStyles = makeStyles({
   root: {
@@ -30,6 +31,16 @@ const useStyles = makeStyles({
 });
 
 const theme = createTheme({
+  typography: {
+    h2: {
+      fontSize: 30,
+      marginBottom: 10,
+    },
+    h6: {
+      marginTop: 10,
+      marginBottom: 10,
+    },
+  },
   palette: {
     primary: {
       main: orange[500],
@@ -65,49 +76,51 @@ function CheckboxExample() {
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <div className="App">
-        <header className="App-header">
-          {/* making it  div component */}
-          <Typography variant="h2" component="div">
-            Material UI Tutorial
-          </Typography>
-          <Typography variant="subtitle">Brushing up on Material UI</Typography>
-          <ButtonStyle />
-          <TextField
-            variant="outlined"
-            color="secondary"
-            placeholder="test@test.com"
-            label="email"
-          />
-          <TextField variant="filled" color="secondary" type="date" />
-          <TextField
-            variant="outlined"
-            color="secondary"
-            type="time"
-            label="Time"
-          />
-          <CheckboxExample />
-          <ButtonGroup variant="contained" color="primary">
-            <Button
-              startIcon={<SaveIcon />}
-              size="large"
-              style={{ fontSize: 20 }}
-              href="#"
-            >
-              Save
-            </Button>
-            <Button
-              startIcon={<DeleteIcon />}
-              size="large"
-              style={{ fontSize: 20, marginLeft: 10 }}
-              href="#"
-            >
-              Discard
-            </Button>
-          </ButtonGroup>
-          <img src={logo} className="App-logo" alt="logo" />
-        </header>
-      </div>
+      <Container maxWidth="xs">
+        <div className="App">
+          <header className="App-header">
+            {/* making it  div component */}
+            <Typography variant="h2" component="div">
+              Material UI Tutorial
+            </Typography>
+            <Typography variant="h6">Brushing up on Material UI</Typography>
+            <ButtonStyle />
+            <TextField
+              variant="outlined"
+              color="secondary"
+              placeholder="test@test.com"
+              label="email"
+            />
+            <TextField variant="filled" color="secondary" type="date" />
+            <TextField
+              variant="outlined"
+              color="secondary"
+              type="time"
+              label="Time"
+            />
+            <CheckboxExample />
+            <ButtonGroup variant="contained" color="primary">
+              <Button
+                startIcon={<SaveIcon />}
+                size="large"
+                style={{ fontSize: 20 }}
+                href="#"
+              >
+                Save
+              </Button>
+              <Button
+                startIcon={<DeleteIcon />}
+                size="large"
+                style={{ fontSize: 20, marginLeft: 10 }}
+                href="#"
+              >
+                Discard
+              </Button>
+            </ButtonGroup>
+            <img src={logo} className="App-logo" alt="logo" />
+          </header>
+        </div>
+      </Container>
     </ThemeProvider>
   );
 }
