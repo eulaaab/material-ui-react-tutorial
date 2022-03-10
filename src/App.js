@@ -4,18 +4,26 @@ import "./App.css";
 import Button from "@material-ui/core/Button";
 import SaveIcon from "@material-ui/icons/Save";
 import DeleteIcon from "@material-ui/icons/Delete";
-import { ButtonGroup } from "@material-ui/core";
+import { ButtonGroup, FormControlLabel } from "@material-ui/core";
 import Checkbox from "@material-ui/core/Checkbox";
+import FormLabelController from "@material-ui/core/FormControlLabel";
+import Delete from "@material-ui/icons/Delete";
 
 function CheckboxExample() {
   const [checked, setChecked] = React.useState(true);
   return (
-    <div>
-      <Checkbox
-        checked={checked}
-        onChange={(e) => setChecked(e.target.value)}
-      />
-    </div>
+    <FormControlLabel
+      control={
+        <Checkbox
+          checked={checked}
+          onChange={(e) => setChecked(e.target.checked)}
+          icon={<DeleteIcon />}
+          checkedIcon={<SaveIcon />}
+          color="primary"
+        />
+      }
+      label="Checkbox Label"
+    />
   );
 }
 function App() {
