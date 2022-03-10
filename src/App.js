@@ -15,6 +15,8 @@ import {
 } from "@material-ui/core/styles";
 import orange from "@material-ui/core/colors/orange";
 import green from "@material-ui/core/colors/green";
+import "fontsource-roboto";
+import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles({
   root: {
@@ -65,6 +67,11 @@ function App() {
     <ThemeProvider theme={theme}>
       <div className="App">
         <header className="App-header">
+          {/* making it  div component */}
+          <Typography variant="h2" component="div">
+            Material UI Tutorial
+          </Typography>
+          <Typography variant="subtitle">Brushing up on Material UI</Typography>
           <ButtonStyle />
           <TextField
             variant="outlined"
