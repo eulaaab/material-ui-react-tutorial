@@ -8,7 +8,13 @@ import { ButtonGroup } from "@material-ui/core";
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import TextField from "@material-ui/core/TextField";
-import { makeStyles } from "@material-ui/core/styles";
+import {
+  makeStyles,
+  ThemeProvider,
+  createTheme,
+} from "@material-ui/core/styles";
+import orange from "@material-ui/core/colors/orange";
+import green from "@material-ui/core/colors/green";
 
 const useStyles = makeStyles({
   root: {
@@ -18,6 +24,17 @@ const useStyles = makeStyles({
     borderRadius: 15,
     color: "white",
     padding: "10px 30px",
+  },
+});
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: orange[500],
+    },
+    secondary: {
+      main: green[500],
+    },
   },
 });
 
@@ -45,44 +62,46 @@ function CheckboxExample() {
 }
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <ButtonStyle />
-        <TextField
-          variant="outlined"
-          color="secondary"
-          placeholder="test@test.com"
-          label="email"
-        />
-        <TextField variant="filled" color="secondary" type="date" />
-        <TextField
-          variant="outlined"
-          color="secondary"
-          type="time"
-          label="Time"
-        />
-        <CheckboxExample />
-        <ButtonGroup variant="contained" color="primary">
-          <Button
-            startIcon={<SaveIcon />}
-            size="large"
-            style={{ fontSize: 20 }}
-            href="#"
-          >
-            Save
-          </Button>
-          <Button
-            startIcon={<DeleteIcon />}
-            size="large"
-            style={{ fontSize: 20, marginLeft: 10 }}
-            href="#"
-          >
-            Discard
-          </Button>
-        </ButtonGroup>
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <header className="App-header">
+          <ButtonStyle />
+          <TextField
+            variant="outlined"
+            color="secondary"
+            placeholder="test@test.com"
+            label="email"
+          />
+          <TextField variant="filled" color="secondary" type="date" />
+          <TextField
+            variant="outlined"
+            color="secondary"
+            type="time"
+            label="Time"
+          />
+          <CheckboxExample />
+          <ButtonGroup variant="contained" color="primary">
+            <Button
+              startIcon={<SaveIcon />}
+              size="large"
+              style={{ fontSize: 20 }}
+              href="#"
+            >
+              Save
+            </Button>
+            <Button
+              startIcon={<DeleteIcon />}
+              size="large"
+              style={{ fontSize: 20, marginLeft: 10 }}
+              href="#"
+            >
+              Discard
+            </Button>
+          </ButtonGroup>
+          <img src={logo} className="App-logo" alt="logo" />
+        </header>
+      </div>
+    </ThemeProvider>
   );
 }
 
