@@ -18,6 +18,8 @@ import green from "@material-ui/core/colors/green";
 import "fontsource-roboto";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
+import Paper from "@material-ui/core/Paper";
+import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles({
   root: {
@@ -76,7 +78,7 @@ function CheckboxExample() {
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Container maxWidth="xs">
+      <Container maxWidth="small">
         <div className="App">
           <header className="App-header">
             {/* making it  div component */}
@@ -85,6 +87,21 @@ function App() {
             </Typography>
             <Typography variant="h6">Brushing up on Material UI</Typography>
             <ButtonStyle />
+            {/* grid can be a container or an item */}
+            <Grid container spacing={4} justify="center">
+              <Grid item xs={3} sm={6}>
+                {/* i.e. card */}
+                <Paper style={{ height: 75, width: "100%" }} />
+              </Grid>
+              <Grid item xs={3} sm={6}>
+                {/* i.e. card */}
+                <Paper style={{ height: 75, width: "100%" }} />
+              </Grid>
+              <Grid item xs={3} sm={6}>
+                {/* i.e. card */}
+                <Paper style={{ height: 75, width: "100%" }} />
+              </Grid>
+            </Grid>
             <TextField
               variant="outlined"
               color="secondary"
@@ -117,7 +134,7 @@ function App() {
                 Discard
               </Button>
             </ButtonGroup>
-            <img src={logo} className="App-logo" alt="logo" />
+            {/* <img src={logo} className="App-logo" alt="logo" /> */}
           </header>
         </div>
       </Container>
