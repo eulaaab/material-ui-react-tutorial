@@ -8,6 +8,23 @@ import { ButtonGroup } from "@material-ui/core";
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import TextField from "@material-ui/core/TextField";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles({
+  root: {
+    background: "linear-gradient(45deg, #333, #999)",
+    border: 0,
+    marginBottom: 10,
+    borderRadius: 15,
+    color: "white",
+    padding: "10px 30px",
+  },
+});
+
+function ButtonStyle() {
+  const classes = useStyles();
+  return <Button className={classes.root}>Styled Button</Button>;
+}
 
 function CheckboxExample() {
   const [checked, setChecked] = React.useState(true);
@@ -30,10 +47,12 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <ButtonStyle />
         <TextField
           variant="outlined"
           color="secondary"
           placeholder="test@test.com"
+          label="email"
         />
         <TextField variant="filled" color="secondary" type="date" />
         <TextField
