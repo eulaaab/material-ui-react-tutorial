@@ -4,10 +4,10 @@ import "./App.css";
 import Button from "@material-ui/core/Button";
 import SaveIcon from "@material-ui/icons/Save";
 import DeleteIcon from "@material-ui/icons/Delete";
-import { ButtonGroup, FormControlLabel } from "@material-ui/core";
+import { ButtonGroup } from "@material-ui/core";
 import Checkbox from "@material-ui/core/Checkbox";
-import FormLabelController from "@material-ui/core/FormControlLabel";
-import Delete from "@material-ui/icons/Delete";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import TextField from "@material-ui/core/TextField";
 
 function CheckboxExample() {
   const [checked, setChecked] = React.useState(true);
@@ -30,6 +30,18 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <TextField
+          variant="outlined"
+          color="secondary"
+          placeholder="test@test.com"
+        />
+        <TextField variant="filled" color="secondary" type="date" />
+        <TextField
+          variant="outlined"
+          color="secondary"
+          type="time"
+          label="Time"
+        />
         <CheckboxExample />
         <ButtonGroup variant="contained" color="primary">
           <Button
